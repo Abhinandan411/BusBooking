@@ -1,9 +1,21 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        
+        <item name="android:datePickerDialogTheme">@style/RedisPickerTheme</item>
+        <item name="android:timePickerDialogTheme">@style/RedisPickerTheme</item>
+    </style>
+
+    <style name="RedisPickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#D82C20</item> 
+        
+        <item name="android:buttonBarPositiveButtonStyle">@style/RedisPickerButton</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/RedisPickerButton</item>
+    </style>
+
+    <style name="RedisPickerButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">#D82C20</item>
     </style>
 
 </resources>

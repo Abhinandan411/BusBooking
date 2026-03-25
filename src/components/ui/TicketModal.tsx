@@ -10,9 +10,10 @@ interface TicketModalProps {
 }
 
 const TicketModal: React.FC<TicketModalProps> = ({ visible, onClose, bookingInfo }) => {
+
     return (
         <Modal visible={visible} animationType='slide' transparent>
-            <View className='flex-1 justify-between items-center' style={{ backgroundColor: '#2A2526' }}>
+            <View className='flex-1 justify-center items-center' style={{ backgroundColor: '#2A2526' }}>
                 <TouchableOpacity className='bg-white mb-5 shadow-sm p-1 rounded-full'>
                     <XMarkIcon size={22} color='black' onPress={onClose} />
                 </TouchableOpacity>
@@ -34,7 +35,7 @@ const TicketModal: React.FC<TicketModalProps> = ({ visible, onClose, bookingInfo
 
                     <View className='bg-gray-100 p-3 rounded-lg'>
                         <Text className='text-gray-700 font-semibold'>{bookingInfo?.from} → {bookingInfo?.to}</Text>
-                        <Text className='bg-gray-500 text-sm'>
+                        <Text className='bg-gray-200 text-sm'>
                             {bookingInfo?.departureTime} - {bookingInfo?.arrivalTime}, {' '}
                             {bookingInfo.date}
                         </Text>
@@ -45,13 +46,13 @@ const TicketModal: React.FC<TicketModalProps> = ({ visible, onClose, bookingInfo
                         <Text className='text-gray-500 text-sm '>{bookingInfo.busType}</Text>
                     </View>
 
-                    <View className='mt-3'>
-                        <Text className='text-gray-700'>Seats</Text>
-                        <Text className='text-gray-500 text-sm'>{bookingInfo?.seats?.toString()}</Text>
+                    <View className='mt-3 flex-row  items-center gap-5'>
+                        <Text className='text-gray-700 text-lg'>Seats number :</Text>
+                        <Text className='text-gray-500 text-md font-semibold'>{bookingInfo?.seats?.toString()}</Text>
                     </View>
 
                     <View className='my-6 w-full'>
-                      <Svg height='z' width='100%'>
+                      <Svg height='20' width='100%'>
                         <Line x1='0' y1='1' x2='100%' y2="1" stroke="gray" strokeWidth='2' strokeDasharray='6,6' />
                       </Svg>
                     </View>
@@ -63,10 +64,9 @@ const TicketModal: React.FC<TicketModalProps> = ({ visible, onClose, bookingInfo
                         </Text>
                     </View>
 
-                    <TouchableOpacity className='bg-red-500 flex-row gap-2 p-3 rounded-lg mt-4 justify-center'>
-                        <ArrowUpOnSquareIcon color='white'>
-                            <Text className='text-white font-semibold'>Share your tickets</Text>
-                        </ArrowUpOnSquareIcon>
+                    <TouchableOpacity className='bg-red-500 flex-row gap-2 p-3 rounded-lg mt-4 justify-center items-center'>
+                        <Text className='text-white font-semibold'>Share your tickets</Text>
+                        <ArrowUpOnSquareIcon color='white'/>
                     </TouchableOpacity>
                 </View>
             </View>

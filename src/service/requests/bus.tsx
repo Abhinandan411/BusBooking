@@ -16,13 +16,14 @@ export const fetchBusDetails = async(busId: string)=>{
     return data?.data || [];
 }
 
+
 export const fetchUserTickets = async()=>{
     const {data} = await apiClient.get('/ticket/my-tickets');
-    return data?.tickets || [];
+    return data?.data || [];
 }
 
 export const bookTicket = async({busId, date , seatNumber}:{busId: string , date: string , seatNumber: number[] })=>{
     const {data} = await apiClient.post('/ticket/book' , {busId , date , seatNumber});
-    return data?.ticket;
+    return data?.data;
 }
 

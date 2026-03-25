@@ -6,6 +6,7 @@ import { seats } from '../../utils/dummyData';
 
 
 const BookItem = ({ item }: any) => {
+  console.log(item);
   const [ticketVisible, setTicketVisible] = React.useState(false);
 
   return (
@@ -16,18 +17,21 @@ const BookItem = ({ item }: any) => {
           {item?.status}
         </Text>
       </View>
-      <Text className='text-lg font-bold'>
-        {item?.bus?.from} → {item?.bus?.to}
+      
+      <Text className='text-gray-600'>
+        {new Date(item?.bus?.departureTime).toLocaleDateString('en-IN', {
+          weekday: 'short',
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        })}
       </Text>
 
-      <Text className='text-gray-600' >
-        {item?.buses?.type}
-      </Text>
 
       <View className='flex-row items-center mt-2'>
         <UserGroupIcon color='gray' size={18} />
         <Text className='ml-2 text-gray-600'>
-          {item.seatNumbers?.toString()}
+          {item.seatNumber?.toString()}
         </Text>
       </View>
 

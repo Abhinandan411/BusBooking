@@ -19,8 +19,6 @@ const Bookings = () => {
     refetchOnWindowFocus: true
   })
 
-  console.log(tickets, "All Tickets");
-
 
   useFocusEffect(
     useCallback(() => {
@@ -60,10 +58,6 @@ const Bookings = () => {
       </View>
     )
   }
-
-
-
-
 
   return (
     <View className='flex-1 p-2 bg-white'>

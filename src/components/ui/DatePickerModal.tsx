@@ -18,7 +18,9 @@ const DatePickerModal: React.FC<DatePickerModalProps> = ({ visible, onClose, onC
             <DateTimePicker
                 value={tempDate}
                 mode="date"
-                display="default"
+                display="inline"
+                accentColor='red'
+                textColor='red'
                 onValueChange={(event: any, date) => {
                     if (date) {
                         onConfirm(tempDate)
@@ -62,10 +64,7 @@ const DatePickerModal: React.FC<DatePickerModalProps> = ({ visible, onClose, onC
                         >
                             <Text className='text-center text-white font-bold'>Confirm</Text>
                         </TouchableOpacity>
-
-
                     </View>
-
                 </View>
             </View>
 
